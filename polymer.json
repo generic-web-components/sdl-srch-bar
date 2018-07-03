@@ -1,0 +1,53 @@
+{
+  "entrypoint": "./demo/index.html",
+  "shell": "./demo/index.html",
+  "sources": [
+   "./sdl-srch-bar.js",
+   "./demo/*",
+   "./demo/data/*",
+   ".gitignore",
+   "package.json"
+  ],
+  "extraDependencies": [
+    "./node_modules/@webcomponents/**/*"
+  ],
+  "builds": [
+    {
+      "name": "es6-bundled",
+      "browserCapabilities": [
+        "es2015"
+      ],
+      "js": {
+        "compile": "es2015",
+        "minify": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": false 
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    },
+    {
+      "name": "es5-bundled",
+      "js": {
+        "compile": "es5",
+        "minify": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": false 
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    }
+  ],
+  "moduleResolution": "node",
+  "npm": true
+}
