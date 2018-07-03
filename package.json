@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Basic Search Bar Element",
   "main": "sdl-srch-bar.js",
+  "author": "Marty Israelsen",
+  "license": "MIT",
   "dependencies": {
     "@polymer/iron-ajax": "^3.0.0-pre.21",
     "@polymer/iron-form": "^3.0.0-pre.21",
@@ -14,5 +16,13 @@
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^1.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/generic-web-components/sdl-srch-bar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/generic-web-components/sdl-srch-bar/issues"
+  },
+  "homepage": "https://github.com/generic-web-components/sdl-srch-bar#readme"
 }
