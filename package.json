@@ -13,7 +13,10 @@
     "@polymer/lit-element": "^0.5.2",
     "@polymer/paper-input": "^3.0.0-pre.21",
     "@polymer/polymer": "^3.0.0",
-    "@polymer/promise-polyfill": "^3.0.0-pre.21"
+    "@polymer/promise-polyfill": "^3.0.0-pre.21",
+    "amd-loader": "0.0.8",
+    "feature-detect-es6": "^1.4.1",
+    "requirejs": "^2.3.5"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.21",

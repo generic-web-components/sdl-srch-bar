@@ -1,15 +1,24 @@
 {
   "entrypoint": "./demo/index.html",
-  "shell": "./demo/index.html",
+  "shell": "./sdl-srch-bar.js",
   "sources": [
+   "./src/components/sdl-srch-bar.js",
    "./sdl-srch-bar.js",
+   "./sdl-srch-bar-loader.js",
+   "./index.es5.html",
+   "./index.es6.html",
+   "./amd-loader.js",
    "./demo/*",
    "./demo/data/*",
    ".gitignore",
    "package.json"
   ],
   "extraDependencies": [
-    "./node_modules/@webcomponents/**/*"
+    "./node_modules/@webcomponents/**/*",
+    "./node_modules/feature-detect-es6/**/*"
+  ],
+  "fragments": [
+    "./sdl-srch-bar.js"
   ],
   "builds": [
     {
@@ -20,7 +29,7 @@
       "js": {
         "compile": "es2015",
         "minify": true,
-        "transformModulesToAmd": true
+        "transformModulesToAmd": true 
       },
       "css": {
         "minify": true
@@ -36,7 +45,7 @@
       "js": {
         "compile": "es5",
         "minify": true,
-        "transformModulesToAmd": true
+        "transformModulesToAmd": true 
       },
       "css": {
         "minify": true
