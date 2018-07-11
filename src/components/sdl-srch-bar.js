@@ -14,7 +14,7 @@ class SdlSrchBar extends LitElement {
   constructor() {
     super();
     //this.ajaxUrl = 'testing/123'
-
+    console.log("sdl-srch-bar constructor called...")
     this.addEventListener("change", sendEventOrAjax, false);
     this.addEventListener("keyup", sendEventOrAjax, false);
   }
@@ -56,7 +56,7 @@ function sendEventOrAjax(event) {
   var formData = form.serializeForm();
 
   if (typeof this.ajaxUrl === 'undefined') {
-
+    console.log("dispatching 'changed' event");
     // Create a new event that has the formData in it.
     me.dispatchEvent(new CustomEvent('changed', {
       bubbles: true,

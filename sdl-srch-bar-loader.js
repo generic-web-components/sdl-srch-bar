@@ -5,7 +5,9 @@
  * @returns {boolean}
  */
 var classFunc = function () {
-  return evaluates('class Something {}')
+  var ret = evaluates('class Something {}')
+  console.log("classFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -14,7 +16,9 @@ var classFunc = function () {
  * @returns {boolean}
  */
 var arrowFunc = function () {
-  return evaluates('var f = x => 1')
+  var ret = evaluates('var f = x => 1');
+  console.log("arrowFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -23,7 +27,9 @@ var arrowFunc = function () {
  * @returns {boolean}
  */
 var letFunc = function () {
-  return evaluates('let a = 1')
+  var ret = evaluates('let a = 1');
+  console.log("letFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -32,7 +38,9 @@ var letFunc = function () {
  * @returns {boolean}
  */
 var constFunc = function () {
-  return evaluates('const a = 1')
+  var ret = evaluates('const a = 1')
+  console.log("letFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -41,7 +49,7 @@ var constFunc = function () {
  * @returns {boolean}
  */
 var newArrayFeatures = function () {
-  return typeof Array.prototype.find !== 'undefined' &&
+  var ret = typeof Array.prototype.find !== 'undefined' &&
     typeof Array.prototype.findIndex !== 'undefined' &&
     typeof Array.from !== 'undefined' &&
     typeof Array.of !== 'undefined' &&
@@ -49,6 +57,8 @@ var newArrayFeatures = function () {
     typeof Array.prototype.keys !== 'undefined' &&
     typeof Array.prototype.copyWithin !== 'undefined' &&
     typeof Array.prototype.fill !== 'undefined'
+  console.log("newArrayFeatures = "+ret);
+  return ret;
 }
 
 /**
@@ -57,10 +67,12 @@ var newArrayFeatures = function () {
  * @returns {boolean}
  */
 var newObjectFunc = function () {
-  return typeof Object.assign !== 'undefined' &&
+  var ret = typeof Object.assign !== 'undefined' &&
     typeof Object.setPrototypeOf !== 'undefined' &&
     typeof Object.getOwnPropertySymbols !== 'undefined' &&
     typeof Object.is !== 'undefined'
+  console.log("newObjectFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -69,10 +81,12 @@ var newObjectFunc = function () {
  * @returns {boolean}
  */
 var collections = function () {
-  return typeof Map !== 'undefined' &&
+  var ret = typeof Map !== 'undefined' &&
     typeof WeakMap !== 'undefined' &&
     typeof Set !== 'undefined' &&
     typeof WeakSet !== 'undefined'
+  console.log("collections = "+ret);
+  return ret;
 }
 
 /**
@@ -81,7 +95,9 @@ var collections = function () {
  * @returns {boolean}
  */
 var generators = function () {
-  return evaluates('function* test() {}')
+  var ret = evaluates('function* test() {}')
+  console.log("generators = "+ret);
+  return ret;
 }
 
 /**
@@ -90,7 +106,9 @@ var generators = function () {
  * @returns {boolean}
  */
 var promiseFunc = function () {
-  return typeof Promise !== 'undefined'
+  var ret = typeof Promise !== 'undefined'
+  console.log("PromiseFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -99,7 +117,9 @@ var promiseFunc = function () {
  * @returns {boolean}
  */
 var templateFunc = function () {
-  return evaluates('var a = `a`')
+  var ret = evaluates('var a = `a`')
+  console.log("templateFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -108,7 +128,9 @@ var templateFunc = function () {
  * @returns {boolean}
  */
 var symbolsFunc = function () {
-  return typeof Symbol !== 'undefined' && typeof Symbol.for === 'function'
+  var ret = typeof Symbol !== 'undefined' && typeof Symbol.for === 'function'
+  console.log("symbolsFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -117,7 +139,9 @@ var symbolsFunc = function () {
  * @returns {boolean}
  */
 var destructuring = function () {
-  return evaluates("var { first: f, last: l } = { first: 'Jane', last: 'Doe' }")
+  var ret = evaluates("var { first: f, last: l } = { first: 'Jane', last: 'Doe' }")
+  console.log("destructuring = "+ret);
+  return ret;
 }
 
 /**
@@ -126,7 +150,9 @@ var destructuring = function () {
  * @returns {boolean}
  */
 var spreadFunc = function () {
-  return evaluates('Math.max(...[ 5, 10 ])')
+  var ret = evaluates('Math.max(...[ 5, 10 ])')
+  console.log("spreadFunc = "+ret);
+  return ret;
 }
 
 /**
@@ -135,14 +161,18 @@ var spreadFunc = function () {
  * @returns {boolean}
  */
 var defaultParamValues = function () {
-  return evaluates('function test (one = 1) {}')
+  var ret = evaluates('function test (one = 1) {}')
+  console.log("defaultParamValues = "+ret);
+  return ret;
 }
 
 var importFunc = function () {
   try {
     new Function('import("")');
+    console.log("importFunc = true");
     return true;
   } catch (err) {
+    console.log("importFunc = false");
     return false;
   }
 }
@@ -256,13 +286,19 @@ var cScriptLoader = (function ()
 
 if (classFunc() && spreadFunc() && promiseFunc() 
       && newObjectFunc() && arrowFunc() && symbolsFunc() 
-      && templateFunc() && importFunc()) {
+      && templateFunc() && importFunc() ) {
   console.log("loading es6...");
   var ScriptLoader = new cScriptLoader(["./es6-bundled/amd-loader.js", "./es6-bundled/sdl-srch-bar.js"]);
   ScriptLoader.loadFiles();
+} else if (classFunc() && spreadFunc() && promiseFunc() 
+      && newObjectFunc() && arrowFunc() && symbolsFunc() 
+      && templateFunc() ) {
+  console.log("loading es6 mostly...");
+  var ScriptLoader = new cScriptLoader(["./es6-bundled/amd-loader.js","./es6-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js", "./es6-bundled/sdl-srch-bar.js"]);
+  ScriptLoader.loadFiles();
 } else {
   console.log("loading es5...");
-  var ScriptLoader = new cScriptLoader(["./es6-bundled/amd-loader.js", "./es6-bundled/sdl-srch-bar.js"]);
+  var ScriptLoader = new cScriptLoader(["./es5-bundled/amd-loader.js","./es5-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js", "./es5-bundled/sdl-srch-bar.js"]);
   ScriptLoader.loadFiles();
 }
 

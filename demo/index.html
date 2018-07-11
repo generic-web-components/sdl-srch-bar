@@ -6,6 +6,7 @@
 
     <title>sdl-srch-bar demo</title>
 
+    <script type="module" src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <script type="module" src="../sdl-srch-bar.js"></script>
     <script type="module">
       import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
@@ -27,10 +28,6 @@
       <demo-snippet>
         <template>
 
-          <!-- First, load amd loader and sdl-srch-bar element -->
-      <!--     <script src="../amd-loader.js"></script>
-          <script type="module" src="../sdl-srch-bar.js"></script> -->
-
           <!-- Now add sdl-srch-bar to html section -->
           <sdl-srch-bar id='srch-bar1' ajaxUrl='./demo/data/srch-data.txt'>  
 
@@ -44,7 +41,7 @@
 
 
           <!-- Finally, listen for change event -->
-          <script>
+<!--           <script>
               $('document').ready(function(){
 
                 var srch1 = document.querySelector('#srch-bar1');
@@ -53,7 +50,7 @@
                 }, false);
 
               });
-          </script>
+          </script> -->
 
         </template>
       </demo-snippet>
@@ -79,7 +76,7 @@
             
           </sdl-srch-bar>
 
-          <script>
+<!--           <script>
               $('document').ready(function(){
 
                 var srch2 = document.querySelector('#srch-bar2');
@@ -88,7 +85,7 @@
                 }, false);
 
               });
-          </script>
+          </script> -->
 
         </template>
       </demo-snippet>
@@ -116,7 +113,7 @@
             message.innerHTML += "<br>e.detail.formData = " + JSON.stringify(e.detail.formData);
           }, false);
           
-        }, 1000);
+        }, 3000);
 
 
       }, false);

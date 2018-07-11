@@ -8,54 +8,22 @@
    "./index.es5.html",
    "./index.es6.html",
    "./amd-loader.js",
+   "./amd-loader-es5.js",
+   "./babel-helpers.js",
    "./demo/*",
    "./demo/data/*",
    ".gitignore",
    "package.json"
   ],
   "extraDependencies": [
-    "./node_modules/@webcomponents/**/*",
-    "./node_modules/feature-detect-es6/**/*"
+    "./node_modules/@webcomponents/**/*"
   ],
   "fragments": [
     "./sdl-srch-bar.js"
   ],
   "builds": [
-    {
-      "name": "es6-bundled",
-      "browserCapabilities": [
-        "es2015"
-      ],
-      "js": {
-        "compile": "es2015",
-        "minify": true,
-        "transformModulesToAmd": true 
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": false 
-      },
-      "bundle": true,
-      "addServiceWorker": true
-    },
-    {
-      "name": "es5-bundled",
-      "js": {
-        "compile": "es5",
-        "minify": true,
-        "transformModulesToAmd": true 
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": false 
-      },
-      "bundle": true,
-      "addServiceWorker": true
-    }
+ { "preset": "es5-bundled" },
+    { "preset": "es6-bundled" }
   ],
   "moduleResolution": "node",
   "npm": true

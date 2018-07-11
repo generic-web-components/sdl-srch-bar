@@ -21,11 +21,12 @@
 
     <script>
     addEventListener('DOMContentLoaded', function(){ 
-
+        console.log("DOMContentLoaded called");
         setTimeout(function(){ 
         var srch1 = document.querySelector('#srch-bar1');
-
+          console.log("srch1 = ",srch1);
           srch1.addEventListener("changed", function(e) {
+            console.log("changed event called!!!",e);
             var message = document.querySelector('#message1');
             message.innerHTML = "<b><u>'changed' event fired:</u></b>&nbsp;&nbsp;&nbsp;";
             message.innerHTML += "<br>e.detail.formData = " + JSON.stringify(e.detail.formData);
