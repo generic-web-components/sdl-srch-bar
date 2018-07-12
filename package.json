@@ -1,6 +1,6 @@
 {
   "name": "@sdl-web/sdl-srch-bar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic Search Bar Element",
   "main": "sdl-srch-bar.js",
   "author": "Marty Israelsen",
