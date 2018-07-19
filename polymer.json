@@ -1,27 +1,18 @@
 {
   "entrypoint": "./demo/index.html",
-  "shell": "./sdl-srch-bar.js",
+  "shell": "./demo/index.html",
+  "fragments": [
+   "./src/components/sdl-srch-bar.js"
+  ],
   "sources": [
    "./src/components/sdl-srch-bar.js",
-   "./sdl-srch-bar.js",
-   "./sdl-srch-bar-loader.js",
-   "./index.html",
-   "./amd-loader.js",
-   "./amd-loader-es5.js",
-   "./babel-helpers.js",
-   "./demo/*",
-   "./demo/data/*",
-   ".gitignore",
-   "package.json"
+   "./demo/data/*"
   ],
   "extraDependencies": [
-    "./node_modules/@webcomponents/**/*"
-  ],
-  "fragments": [
-    "./sdl-srch-bar.js"
+    "./node_modules/@webcomponents/**/*",
+    "./node_modules/@polymer/iron-demo-helpers/**/*"
   ],
   "builds": [
- { "preset": "es5-bundled" },
     { "preset": "es6-bundled" }
   ],
   "moduleResolution": "node",

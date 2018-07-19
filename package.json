@@ -1,36 +1,25 @@
 {
-  "name": "@sdl-web/sdl-srch-bar",
-  "version": "1.0.1",
+  "name": "sdl-srch-bar",
+  "version": "1.0.3",
   "description": "Basic Search Bar Element",
-  "main": "sdl-srch-bar.js",
+  "main": "index.js",
+  "repository": "git+https://github.com/generic-web-components/sdl-srch-bar.git",
   "author": "Marty Israelsen",
   "license": "MIT",
   "dependencies": {
     "@polymer/iron-ajax": "^3.0.0-pre.21",
     "@polymer/iron-form": "^3.0.0-pre.21",
-    "@polymer/iron-icon": "^3.0.0-pre.21",
-    "@polymer/iron-icons": "^3.0.0-pre.21",
     "@polymer/lit-element": "^0.5.2",
-    "@polymer/paper-input": "^3.0.0-pre.21",
-    "@polymer/polymer": "^3.0.0",
-    "@polymer/promise-polyfill": "^3.0.0-pre.21",
-    "amd-loader": "0.0.8",
-    "babel-helpers": "^6.24.1",
-    "feature-detect-es6": "^1.4.1",
-    "requirejs": "^2.3.5"
+    "@polymer/polymer": "^3.0.0-pre.13"
+  },
+  "resolutions": {
+    "@polymer/polymer": "3.0.2"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.21",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
-    "babel-cli": "^6.26.0",
-    "wct-browser-legacy": "^1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/generic-web-components/sdl-srch-bar.git"
-  },
-  "bugs": {
-    "url": "https://github.com/generic-web-components/sdl-srch-bar/issues"
-  },
-  "homepage": "https://github.com/generic-web-components/sdl-srch-bar#readme"
+    "@polymer/iron-icon": "^3.0.0-pre.21",
+    "@polymer/iron-icons": "^3.0.0-pre.21",
+    "@polymer/paper-input": "^3.0.0-pre.21",
+    "@webcomponents/webcomponentsjs": "^2.0.2"
+  }
 }

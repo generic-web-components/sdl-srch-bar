@@ -1,2 +1,4 @@
 /node_modules/
-build/*
+/build-demo/
+/build-component/
+/build/

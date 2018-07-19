@@ -1,0 +1,20 @@
+{
+  "entrypoint": "./src/components/sdl-srch-bar.js",
+  "shell": "./src/components/sdl-srch-bar.js",
+  "sources": [
+   "./demo/data/*",
+   "./demo/index.html.build-component",
+   "./amd-loader.js",
+   "./sdl-srch-bar-loader.js",
+   "./node_modules/@webcomponents/*"
+  ],
+  "extraDependencies": [
+    "./node_modules/@webcomponents/**/*",
+    "./node_modules/@polymer/iron-demo-helpers/**/*"
+  ],
+  "builds": [
+    { "preset": "es6-bundled" }
+  ],
+  "moduleResolution": "node",
+  "npm": true
+}

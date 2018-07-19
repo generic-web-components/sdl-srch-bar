@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>sdl-srch-bar demo</title>
-
     <script type="module" src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-    <script type="module" src="../sdl-srch-bar.js"></script>
+    <script type="module" src="../src/components/sdl-srch-bar.js"></script>
     <script type="module">
-      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
-      import '@polymer/iron-demo-helpers/demo-snippet';
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+      import '@polymer/iron-demo-helpers/demo-snippet.js';
       import '@polymer/paper-input/paper-input.js';
       import '@polymer/iron-icons/iron-icons.js';
+      import '@polymer/iron-icon/iron-icon.js';
       import '@polymer/iron-form/iron-form.js';
     </script>
+
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
@@ -29,7 +30,7 @@
         <template>
 
           <!-- Now add sdl-srch-bar to html section -->
-          <sdl-srch-bar id='srch-bar1' ajaxUrl='./demo/data/srch-data.txt'>  
+          <sdl-srch-bar id='srch-bar1' ajaxUrl='./data/srch-data.txt'>  
 
             <form>
               <paper-input name="input1" label="Filter Search">

@@ -281,24 +281,34 @@ var cScriptLoader = (function ()
     return cScriptLoader;
 })();
 
+// Get base 
+var name = "sdl-srch-bar-loader.js";
 
+var script = document.querySelector('script[src*="' + name +'"]');
+var s = script;
+var es6AmdLoaderUrl = s.src.replace(name, '/es6-bundled/amd-loader.js');s = script;
+var es5AmdLoaderUrl = s.src.replace(name, '/es5-bundled/amd-loader-es5.js');s = script;
+var es6WebCompUrl = s.src.replace(name, '/es6-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js');s = script;
+var es5WebCompUrl = s.src.replace(name, '/es5-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js');s = script;
+var es6MainScriptUrl = s.src.replace(name, '/es6-bundled/src/components/sdl-srch-bar.js');s = script;
+var es5MainScriptUrl = s.src.replace(name, '/es5-bundled/src/components/sdl-srch-bar.js');s = script;
 
 
 if (classFunc() && spreadFunc() && promiseFunc() 
       && newObjectFunc() && arrowFunc() && symbolsFunc() 
       && templateFunc() && importFunc() ) {
   console.log("loading es6...");
-  var ScriptLoader = new cScriptLoader(["./es6-bundled/amd-loader.js", "./es6-bundled/sdl-srch-bar.js"]);
+  var ScriptLoader = new cScriptLoader([es6AmdLoaderUrl, es6MainScriptUrl]);
   ScriptLoader.loadFiles();
 } else if (classFunc() && spreadFunc() && promiseFunc() 
       && newObjectFunc() && arrowFunc() && symbolsFunc() 
       && templateFunc() ) {
   console.log("loading es6 mostly...");
-  var ScriptLoader = new cScriptLoader(["./es6-bundled/amd-loader.js","./es6-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js", "./es6-bundled/sdl-srch-bar.js"]);
+  var ScriptLoader = new cScriptLoader([es6AmdLoaderUrl, es6WebCompUrl, es6MainScriptUrl]);
   ScriptLoader.loadFiles();
 } else {
   console.log("loading es5...");
-  var ScriptLoader = new cScriptLoader(["./es5-bundled/amd-loader.js","./es5-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js", "./es5-bundled/sdl-srch-bar.js"]);
+  var ScriptLoader = new cScriptLoader([es5AmdLoaderUrl, es5WebCompUrl, es5MainScriptUrl]);
   ScriptLoader.loadFiles();
 }
 

@@ -1,3 +1,20 @@
+rm -rf ./build-demo ./build-component
+
+# First, build the demo
 polymer build
-mv build/es6-bundled/sdl-srch-bar-loader.js build/
-mv build/es6-bundled/index.html build/
+mv build build-demo
+
+
+# Now, build the Component
+mv polymer.json polymer.json.saved
+mv polymer.json.build-component polymer.json
+polymer build
+mv build build-component
+
+# move index.html into place for this component
+mv ./build-component/es6-bundled/demo/index.html.build-component ./build-component/es6-bundled/demo/index.html
+mv ./build-component/es6-bundled/sdl-srch-bar-loader.js ./build-component/ 
+mv polymer.json polymer.json.build-component
+mv polymer.json.saved polymer.json
+
+rm -rf ./build
