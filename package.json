@@ -1,7 +1,7 @@
 {
   "name": "@sdl-web/sdl-srch-bar",
-  "version": "1.0.3",
-  "description": "Basic Search Bar Element",
+  "version": "1.0.4",
+  "description": "Advanced Search Bar Element",
   "main": "index.js",
   "repository": "git+https://github.com/generic-web-components/sdl-srch-bar.git",
   "author": "Marty Israelsen",
