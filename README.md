@@ -27,7 +27,7 @@ Once you run this build there will be two build directories created:  build-demo
 ```
 
 ##  Include sdl-srch-bar-loader.js to use as stand-alone component 
-See File: sdl-srch-bar/build-component/es6-bundled/demo/index.html
+or 
 ##  Include sdl-srch-bar.js directly if including in a polymer project. 
 ```
 <!doctype html>
