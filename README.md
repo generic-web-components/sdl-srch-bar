@@ -36,37 +36,38 @@ See File: sdl-srch-bar/build-component/es6-bundled/demo/index.html
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>sdl-srch-bar demo</title>
-    <script type="module" src="../../sdl-srch-bar-loader.js"></script>
+     <!-- If using as a stand-alone-component:  use sdl-srch-bar-loader.js
+    <script src="./node_modules/@sdl-web/sdl-srch-bar/build-component/sdl-srch-bar-loader.js"></script> -->
 
-  </head>
-  <body>
-          <sdl-srch-bar id='srch-bar1' ajaxUrl='data/srch-data.txt'>  
+    <!-- If using in an existing polymer project:  use sdl-srch-bar.js directly-->
+    <script type="import" src="@sdl-web/sdl-srch-bar/src/components/sdl-srch-bar.js"></script> 
 
-            <form>
-              <input name="input1" label="Filter Search">
-            </form>
-            
-          </sdl-srch-bar>
-    	<div id="message1"></div>
-    <br><br><br>
+    <!-- Now add sdl-srch-bar to html section -->
+    <sdl-srch-bar id='srch-bar1' ajaxUrl='./data/srch-data.txt'>  
 
-    <script>
-    addEventListener('DOMContentLoaded', function(){ 
+        <!-- Put whatever input fields (and styling) you want into this slot -->
+      <form>
+        <paper-input name="input1" label="Filter Search">
+          <iron-icon icon="search" id="srch-icon" slot="prefix"></iron-icon>
+        </paper-input>
+      </form>
+      
+    </sdl-srch-bar>
 
-        setTimeout(function(){ 
-        var srch1 = document.querySelector('#srch-bar1');
 
+    <!-- Finally, listen for change event -->
+    <!-- <script>
+        $('document').ready(function(){
+
+          var srch1 = document.querySelector('#srch-bar1');
           srch1.addEventListener("changed", function(e) {
-            var message = document.querySelector('#message1');
-            message.innerHTML = "<b><u>'changed' event fired:</u></b>&nbsp;&nbsp;&nbsp;";
-            message.innerHTML += "<br>e.detail.formData = " + JSON.stringify(e.detail.formData);
-            message.innerHTML += "<br>e.detail.payload = " + JSON.stringify(e.detail.payload);
+            // Do something with the e.detail.payload here if you specified ajaxUrl...
+            // or 
+            // Do something with the e.detail.formData here if you did not specify ajaxUrl...
           }, false);
 
-        }, 1000);
-
-
-      }, false);
+        });
+    </script> -->
 
     </script>
   </body>
