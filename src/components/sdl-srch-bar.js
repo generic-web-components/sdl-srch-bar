@@ -1,4 +1,4 @@
-
+import {LitElement, html} from '@polymer/lit-element';
 import '@polymer/iron-form/iron-form.js';
 
 /**
