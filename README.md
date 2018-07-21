@@ -1,6 +1,10 @@
 # \<sdl-srch-bar\>
 
-Basic Search Bar Element
+Advanced Search Bar Element that throws "change" event for each key stroke .   
+
+If you specify "ajaxUrl" it will handle the ajax for you and only throw it's change event when the ajax has returned - the payload is found in e.detail.payload.  
+
+If you do NOT specify "ajaxUrl" then it will throw the "change" event after each key stroke and return to you the form data in e.detail.formData.   
 
 ## Install the Polymer-CLI
 
