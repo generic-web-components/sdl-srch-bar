@@ -1,4 +1,4 @@
-import {LitElement, html} from '@polymer/lit-element';
+
 import '@polymer/iron-form/iron-form.js';
 
 /**
@@ -58,7 +58,7 @@ function sendEventOrAjax(event) {
   if (typeof this.ajaxUrl === 'undefined') {
     //console.log("dispatching 'changed' event");
     // Create a new event that has the formData in it.
-    me.dispatchEvent(new CustomEvent('changed', {
+    me.dispatchEvent(new CustomEvent('change', {
       bubbles: true,
       composed: true,
       detail: {
@@ -72,7 +72,7 @@ function sendEventOrAjax(event) {
     // Send off the ajax and put the response into the return event.detail.payload
     get(this.ajaxUrl).then(function(response) {
       var resp = JSON.parse(response);
-        me.dispatchEvent(new CustomEvent('changed', {
+        me.dispatchEvent(new CustomEvent('change', {
         bubbles: true,
         composed: true,
         detail: {
