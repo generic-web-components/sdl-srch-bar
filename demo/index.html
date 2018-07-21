@@ -27,31 +27,38 @@
       <h1>Basic sdl-srch-bar demo -- with 'ajaxUrl' specified</h1>
       <p><b><u>Note:</u></b>  When you specify the 'ajaxUrl' the sdl-srch-bar will manage the ajax call for you.  It will fire it's 'changed' event only after the ajax has come back.  The event.detail.payload will hold the response from the ajax call.</p>
       <demo-snippet>
-        <template>
+        <template>         
 
-          <!-- Now add sdl-srch-bar to html section -->
-          <sdl-srch-bar id='srch-bar1' ajaxUrl='./data/srch-data.txt'>  
+<!-- If using as a stand-alone-component:  use sdl-srch-bar-loader.js
+<script src="./node_modules/@sdl-web/sdl-srch-bar/build-component/sdl-srch-bar-loader.js"></script> -->
 
-            <form>
-              <paper-input name="input1" label="Filter Search">
-                <iron-icon icon="search" id="srch-icon" slot="prefix"></iron-icon>
-              </paper-input>
-            </form>
-            
-          </sdl-srch-bar>
+<!-- If using in an existing polymer project:  use sdl-srch-bar.js directly-->
+<script type="import" src="@sdl-web/sdl-srch-bar/src/components/sdl-srch-bar.js"></script> 
+
+<!-- Now add sdl-srch-bar to html section -->
+<sdl-srch-bar id='srch-bar1' ajaxUrl='./data/srch-data.txt'>  
+
+    <!-- Put whatever input fields (and styling) you want into this slot -->
+  <form>
+    <paper-input name="input1" label="Filter Search">
+      <iron-icon icon="search" id="srch-icon" slot="prefix"></iron-icon>
+    </paper-input>
+  </form>
+  
+</sdl-srch-bar>
 
 
-          <!-- Finally, listen for change event -->
-<!--           <script>
-              $('document').ready(function(){
+<!-- Finally, listen for change event -->
+<!-- <script>
+    $('document').ready(function(){
 
-                var srch1 = document.querySelector('#srch-bar1');
-                srch1.addEventListener("changed", function(e) {
-                  // Do something with the e.detail.payload here...
-                }, false);
+      var srch1 = document.querySelector('#srch-bar1');
+      srch1.addEventListener("changed", function(e) {
+        // Do something with the e.detail.payload here...
+      }, false);
 
-              });
-          </script> -->
+    });
+</script> -->
 
         </template>
       </demo-snippet>
@@ -76,17 +83,6 @@
             </form>
             
           </sdl-srch-bar>
-
-<!--           <script>
-              $('document').ready(function(){
-
-                var srch2 = document.querySelector('#srch-bar2');
-                srch2.addEventListener("changed", function(e) {
-                  // Do something with the e.detail.formData here...
-                }, false);
-
-              });
-          </script> -->
 
         </template>
       </demo-snippet>

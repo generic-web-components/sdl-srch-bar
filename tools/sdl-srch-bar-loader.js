@@ -286,8 +286,8 @@ var name = "sdl-srch-bar-loader.js";
 
 var script = document.querySelector('script[src*="' + name +'"]');
 var s = script;
-var es6AmdLoaderUrl = s.src.replace(name, '/es6-bundled/amd-loader.js');s = script;
-var es5AmdLoaderUrl = s.src.replace(name, '/es5-bundled/amd-loader-es5.js');s = script;
+var es6AmdLoaderUrl = s.src.replace(name, '/es6-bundled/tools/amd-loader.js');s = script;
+var es5AmdLoaderUrl = s.src.replace(name, '/es5-bundled/tools/amd-loader-es5.js');s = script;
 var es6WebCompUrl = s.src.replace(name, '/es6-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js');s = script;
 var es5WebCompUrl = s.src.replace(name, '/es5-bundled/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js');s = script;
 var es6MainScriptUrl = s.src.replace(name, '/es6-bundled/src/components/sdl-srch-bar.js');s = script;

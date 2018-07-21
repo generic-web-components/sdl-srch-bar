@@ -1,5 +1,5 @@
 {
-  "name": "sdl-srch-bar",
+  "name": "@sdl-web/sdl-srch-bar",
   "version": "1.0.3",
   "description": "Basic Search Bar Element",
   "main": "index.js",

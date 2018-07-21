@@ -1,3 +1,5 @@
+echo "\nBuilding sdl-srch-bar component...\n"
+echo "Note:  Please wait until build has finished -- canceling in the middle of the build could leave it in a weird state\n\n"
 rm -rf ./build-demo ./build-component
 
 # First, build the demo
@@ -13,8 +15,10 @@ mv build build-component
 
 # move index.html into place for this component
 mv ./build-component/es6-bundled/demo/index.html.build-component ./build-component/es6-bundled/demo/index.html
-mv ./build-component/es6-bundled/sdl-srch-bar-loader.js ./build-component/ 
+mv ./build-component/es6-bundled/tools/sdl-srch-bar-loader.js ./build-component/ 
 mv polymer.json polymer.json.build-component
 mv polymer.json.saved polymer.json
 
 rm -rf ./build
+
+echo "\n\nFinished!!!\n"

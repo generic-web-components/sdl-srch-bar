@@ -4,8 +4,7 @@
   "sources": [
    "./demo/data/*",
    "./demo/index.html.build-component",
-   "./amd-loader.js",
-   "./sdl-srch-bar-loader.js",
+   "./tools/*",
    "./node_modules/@webcomponents/*"
   ],
   "extraDependencies": [
