@@ -21,9 +21,9 @@ $ ./sdlMake
 Once you run this build there will be two build directories created:  build-demo & build-component
 
 
-##  Run the es6 version of the Demo 
+##  Run the es6 version of the Demo (Assuming you installed it at SERVER_ROOT)
 ```
-http://localhost/sdl-srch-bar/build-demo/es6-bundled/demo/index.html
+{SERVER_ROOT}/sdl-srch-bar/build-demo/es6-bundled/demo/index.html
 ```
 
 ##  Include sdl-srch-bar-loader.js to use as stand-alone component 
