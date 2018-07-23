@@ -1,4 +1,4 @@
-
+console.log("We are in loader...");
 /**
  * Returns true if the `class` statement is available.
  *
