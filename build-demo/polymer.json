@@ -8,6 +8,7 @@
     "src/components/sdl-srch-bar.js",
     "demo/data/*",
     "demo/index.html",
+    "demo/index-comp.html",
     "tools/*",
     "node_modules/@webcomponents/*",
     "demo/index.html",

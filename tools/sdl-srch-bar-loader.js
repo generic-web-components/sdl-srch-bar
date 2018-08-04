@@ -293,6 +293,8 @@ var es5WebCompUrl = s.src.replace(name, '/es5-bundled/node_modules/@webcomponent
 var es6MainScriptUrl = s.src.replace(name, '/es6-bundled/src/components/sdl-srch-bar.js');s = script;
 var es5MainScriptUrl = s.src.replace(name, '/es5-bundled/src/components/sdl-srch-bar.js');s = script;
 
+var es5SharedBundleUrl = s.src.replace(name, '/es5-bundled/shared_bundle_1.js');s = script;
+
 
 if (classFunc() && spreadFunc() && promiseFunc() 
       && newObjectFunc() && arrowFunc() && symbolsFunc() 
@@ -308,7 +310,7 @@ if (classFunc() && spreadFunc() && promiseFunc()
   ScriptLoader.loadFiles();
 } else {
   console.log("loading es5...");
-  var ScriptLoader = new cScriptLoader([es5AmdLoaderUrl, es5WebCompUrl, es5MainScriptUrl]);
+  var ScriptLoader = new cScriptLoader([es5AmdLoaderUrl, es5SharedBundleUrl, es5WebCompUrl, es5MainScriptUrl]);
   ScriptLoader.loadFiles();
 }
 

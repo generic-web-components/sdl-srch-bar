@@ -10,7 +10,8 @@
     "@polymer/iron-ajax": "^3.0.0-pre.21",
     "@polymer/iron-form": "^3.0.0-pre.21",
     "@polymer/lit-element": "^0.5.2",
-    "@polymer/polymer": "^3.0.0-pre.13"
+    "@polymer/polymer": "^3.0.0-pre.13",
+    "jquery": "^3.3.1"
   },
   "resolutions": {
     "@polymer/polymer": "3.0.2"
