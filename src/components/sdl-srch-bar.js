@@ -47,6 +47,7 @@ class SdlSrchBar extends LitElement {
   
     var form = this._root.querySelector('#main-form');
     var formData = form.serializeForm();
+    formData.xaction = "read";
   
     if (typeof this.ajaxUrl === 'undefined') {
       // Create a new event that has the formData in it.
