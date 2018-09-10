@@ -1932,10 +1932,10 @@
 <script src="./node_modules/@sdl-web/sdl-srch-bar/build-component/sdl-srch-bar-loader.js"></script> -->
 
 <!-- If using in an existing polymer project:  use sdl-srch-bar.js directly-->
-<script type="import" src="@sdl-web/sdl-srch-bar/src/components/sdl-srch-bar.js"></script> 
+<!-- <script type="import" src="@sdl-web/sdl-srch-bar/src/components/sdl-srch-bar.js"></script>  -->
 
 <!-- Now add sdl-srch-bar to html section -->
-<sdl-srch-bar id="srch-bar1" ajaxurl="./data/srch-data.txt">  
+<sdl-srch-bar id="srch-bar1" ajaxurl="./data/srch-data.txt" autoload="">  
 
     <!-- Put whatever input fields (and styling) you want into this slot -->
   <form>
@@ -1989,7 +1989,7 @@
     <div id="message2"></div>
     <br><br><br>
 
-    <script>addEventListener("DOMContentLoaded",function(){setTimeout(function(){var srch1=document.querySelector("#srch-bar1"),srch2=document.querySelector("#srch-bar2");srch1.addEventListener("changed",function(e){var message=document.querySelector("#message1");message.innerHTML="<b><u>'changed' event fired:</u></b>&nbsp;&nbsp;&nbsp;";message.innerHTML+="<br>e.detail.formData = "+JSON.stringify(e.detail.formData);message.innerHTML+="<br>e.detail.payload = "+JSON.stringify(e.detail.payload)},!1);srch2.addEventListener("changed",function(e){var message=document.querySelector("#message2");message.innerHTML="<b><u>'changed' event fired:</u></b>&nbsp;&nbsp;&nbsp;";message.innerHTML+="<br>e.detail.formData = "+JSON.stringify(e.detail.formData)},!1)},3e3)},!1);</script>
+    <script>addEventListener("DOMContentLoaded",function(){setTimeout(function(){console.log("Start Listening...");var srch1=document.querySelector("#srch-bar1"),srch2=document.querySelector("#srch-bar2");srch1.addEventListener("changed",function(e){var message=document.querySelector("#message1");message.innerHTML="<b><u>'changed' event fired:</u></b>&nbsp;&nbsp;&nbsp;";message.innerHTML+="<br>e.detail.formData = "+JSON.stringify(e.detail.formData);message.innerHTML+="<br>e.detail.payload = "+JSON.stringify(e.detail.payload)},!1);srch2.addEventListener("changed",function(e){var message=document.querySelector("#message2");message.innerHTML="<b><u>'changed' event fired:</u></b>&nbsp;&nbsp;&nbsp;";message.innerHTML+="<br>e.detail.formData = "+JSON.stringify(e.detail.formData)},!1)},1e3)},!1);</script>
   
 
 </body></html>

@@ -1,6 +1,6 @@
 {
   "name": "@sdl-web/sdl-srch-bar",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Advanced Search Bar Element",
   "main": "index.js",
   "repository": "git+https://github.com/generic-web-components/sdl-srch-bar.git",
@@ -9,7 +9,7 @@
   "dependencies": {
     "@polymer/iron-ajax": "^3.0.0-pre.21",
     "@polymer/iron-form": "^3.0.0-pre.21",
-    "@polymer/lit-element": "^0.5.2",
+    "@polymer/lit-element": "^0.6.0-dev.6",
     "@polymer/polymer": "^3.0.0-pre.13",
     "jquery": "^3.3.1"
   },

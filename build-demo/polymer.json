@@ -41,24 +41,6 @@
       "addServiceWorker": false,
       "addPushManifest": false,
       "preset": "es6-bundled"
-    },
-    {
-      "name": "es5-bundled",
-      "js": {
-        "minify": true,
-        "compile": "es5",
-        "transformModulesToAmd": true
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": false
-      },
-      "bundle": true,
-      "addServiceWorker": false,
-      "addPushManifest": false,
-      "preset": "es5-bundled"
     }
   ],
   "npm": true,

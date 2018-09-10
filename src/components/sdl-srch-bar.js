@@ -15,17 +15,28 @@ class SdlSrchBar extends LitElement {
   constructor() {
     super();
 
-    this.autoLoad = true;
+    //this.autoLoad = true;
 
     this.addEventListener('rendered', async (e) => {
+      console.log("captured rendered...")
       this.addEventListener("change", this.sendEventOrAjax, false);
       this.addEventListener("keyup", this.sendEventOrAjax, false);
 
       if (this.autoLoad == true) {
-        //this.sendAjax("");
+        this.sendAjax("");
       }
 
     });
+  }
+
+  // updated(properties) {
+  //   console.log("firstUpdated...");
+
+  // }
+
+  firstUpdated(properties) {
+    console.log("updated...");
+    this.dispatchEvent(new CustomEvent('rendered'));  
   }
 
   _didRender(props, changedProps, prevProps) {
@@ -45,7 +56,7 @@ class SdlSrchBar extends LitElement {
       if( event.stopPropagation ) event.stopPropagation();
     }
   
-    var form = this._root.querySelector('#main-form');
+    var form = this.shadowRoot.querySelector('#main-form');
     var formData = form.serializeForm();
     formData.xaction = "read";
   
@@ -95,11 +106,14 @@ class SdlSrchBar extends LitElement {
     return { 
       ajaxUrl: {
         type: String
+      },
+      autoLoad: {
+        type: Boolean
       }
     }
   }
 
-  _render(props) {
+  render() {
       return html`
       <style>
         :host {
