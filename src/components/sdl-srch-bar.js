@@ -1,5 +1,5 @@
 import {LitElement, html} from '@polymer/lit-element';
-import 'jquery/dist/jquery.min.js';
+import $ from 'jquery/dist/jquery.min.js';
 import '@polymer/iron-form/iron-form.js';
 
 /**
