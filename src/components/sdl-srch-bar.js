@@ -1,5 +1,5 @@
 import {LitElement, html} from '@polymer/lit-element';
-import $ from 'jquery/dist/jquery.min.js';
+import 'jquery/dist/jquery.min.js';
 import '@polymer/iron-form/iron-form.js';
 
 /**
@@ -15,12 +15,14 @@ class SdlSrchBar extends LitElement {
   constructor() {
     super();
 
-    //this.autoLoad = true;
-
     this.addEventListener('rendered', async (e) => {
-      console.log("captured rendered...")
-      this.addEventListener("change", this.sendEventOrAjax, false);
-      this.addEventListener("keyup", this.sendEventOrAjax, false);
+
+      if (this.onChangeOnly == true) {
+        this.addEventListener("change", this.sendEventOrAjax, false);
+      } else {
+        this.addEventListener("change", this.sendEventOrAjax, false);
+        this.addEventListener("keyup", this.sendEventOrAjax, false);
+      }
 
       if (this.autoLoad == true) {
         this.sendAjax("");
@@ -28,11 +30,6 @@ class SdlSrchBar extends LitElement {
 
     });
   }
-
-  // updated(properties) {
-  //   console.log("firstUpdated...");
-
-  // }
 
   firstUpdated(properties) {
     console.log("updated...");
@@ -88,7 +85,12 @@ class SdlSrchBar extends LitElement {
        data: $.param(formData),
        success: function(response){
  
-        var resp = $.parseJSON(response);
+        if (typeof response.payload == 'undefined') {
+          var resp = $.parseJSON(response);
+        } else {
+          var resp = response;
+        }
+        
         me.dispatchEvent(new CustomEvent('changed', {
           bubbles: true,
           composed: true,
@@ -108,6 +110,9 @@ class SdlSrchBar extends LitElement {
         type: String
       },
       autoLoad: {
+        type: Boolean
+      },
+      onChangeOnly: {
         type: Boolean
       }
     }
@@ -130,6 +135,8 @@ class SdlSrchBar extends LitElement {
 }
 
 window.customElements.define('sdl-srch-bar', SdlSrchBar);
+
+
 
 
 
