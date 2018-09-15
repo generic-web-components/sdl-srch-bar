@@ -4,7 +4,7 @@ import '@polymer/iron-form/iron-form.js';
 
 /**
  * `sdl-srch-bar`
- * Basic Search Bar Element
+ * Basic Search Bar Element that uses a slot
  *
  * @customElement
  * @polymer
@@ -17,14 +17,14 @@ class SdlSrchBar extends LitElement {
 
     this.addEventListener('rendered', async (e) => {
 
-      if (this.onChangeOnly == true) {
+      if ( typeof this.onChangeOnly != 'undefined' && this.onChangeOnly.match(/^t/i) ) {
         this.addEventListener("change", this.sendEventOrAjax, false);
       } else {
         this.addEventListener("change", this.sendEventOrAjax, false);
         this.addEventListener("keyup", this.sendEventOrAjax, false);
       }
 
-      if (this.autoLoad == true) {
+      if ( typeof this.autoLoad != 'undefined' && this.autoLoad.match(/^t/i) ) {
         this.sendAjax("");
       }
 
@@ -110,10 +110,10 @@ class SdlSrchBar extends LitElement {
         type: String
       },
       autoLoad: {
-        type: Boolean
+        type: String
       },
       onChangeOnly: {
-        type: Boolean
+        type: String
       }
     }
   }
