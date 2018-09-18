@@ -1935,7 +1935,7 @@
 <!-- <script type="import" src="@sdl-web/sdl-srch-bar/src/components/sdl-srch-bar.js"></script>  -->
 
 <!-- Now add sdl-srch-bar to html section -->
-<sdl-srch-bar id="srch-bar1" ajaxurl="./data/srch-data.txt" autoload="true" ajaxobjname="search">  
+<sdl-srch-bar id="srch-bar1" ajaxurl="./data/srch-data.txt" autoload="true">  
 
     <!-- Put whatever input fields (and styling) you want into this slot -->
   <form>
@@ -1966,13 +1966,13 @@
     <br><br><br>
 
     <div class="vertical-section-container centered">
-      <h1>Basic sdl-srch-bar demo -- no 'ajaxUrl'</h1>
+      <h1>Basic sdl-srch-bar demo -- no 'ajaxUrl &amp; ajaxObjName="search"'</h1>
        <p><b><u>Note:</u></b>  When no 'ajaxUrl' is specified then sdl-srch-bar will fire it's 'changed' event after each change to the form.  The event.detail.formData will be passed back to the user so that they can do their own ajax if desired.</p>
        <p>Note:  'onchangeonly' is set to true so it will only send 'onchange' of the form -- rather than listening to each key stroke".  </p> 
        <demo-snippet>
         <template>
 
-          <sdl-srch-bar id="srch-bar2" onchangeonly="true">
+          <sdl-srch-bar id="srch-bar2" onchangeonly="true" ajaxobjname="search">
 
             <form>
               <paper-input name="input2" label="Filter Search">
