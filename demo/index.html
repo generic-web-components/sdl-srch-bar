@@ -70,6 +70,7 @@
       <h1>Basic sdl-srch-bar demo -- no 'ajaxUrl & ajaxObjName="search"'</h1>
        <p><b><u>Note:</u></b>  When no 'ajaxUrl' is specified then sdl-srch-bar will fire it's 'changed' event after each change to the form.  The event.detail.formData will be passed back to the user so that they can do their own ajax if desired.</p>
        <p>Note:  'onchangeonly' is set to true so it will only send 'onchange' of the form -- rather than listening to each key stroke".  </p> 
+       <p>Final Note:  ajaxObjName="search" puts the form data into an array object called 'search' rather than putting the form data at the root level</p>
        <demo-snippet>
         <template>
 

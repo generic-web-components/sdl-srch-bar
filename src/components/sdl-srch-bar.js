@@ -57,7 +57,7 @@ class SdlSrchBar extends LitElement {
     var formData = {};
     formData.xaction = "read";
 
-    if (typeof this.ajaxObjName !== 'undefined') {
+    if (typeof this.ajaxObjName !== 'undefined' && this.ajaxObjName !== null && this.ajaxObjName !== "") {
       var formArray = [];      
       var formObj = form.serializeForm();
       formArray.push(formObj);
