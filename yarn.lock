@@ -120,11 +120,11 @@
     "@polymer/iron-meta" "^3.0.0-pre.21"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/lit-element@^0.6.0-dev.6":
-  version "0.6.0-dev.6"
-  resolved "https://registry.yarnpkg.com/@polymer/lit-element/-/lit-element-0.6.0-dev.6.tgz#d60d01061300c8059d9dde3a9c14e03777b6a35d"
+"@polymer/lit-element@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@polymer/lit-element/-/lit-element-0.6.1.tgz#56772f8fb0c6d3d73a20a6d17f3bc82ec648664b"
   dependencies:
-    lit-html "^0.11.0"
+    lit-html "^0.11.4"
 
 "@polymer/marked-element@^3.0.0-pre.21":
   version "3.0.0-pre.21"
@@ -196,9 +196,9 @@ jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
-lit-html@^0.11.0:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.11.1.tgz#ad3dcfea1dbaf65fadf335fa1e2bd9ac19255394"
+lit-html@^0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.11.4.tgz#fa397d2b2f2d0523ebc136e5a1699aa4e9346152"
 
 marked@~0.3.9:
   version "0.3.19"

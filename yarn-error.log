@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn install
+  /usr/local/bin/node /usr/local/bin/yarn install --flat
 
 PATH: 
   /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
@@ -14,22 +14,19 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: Invalid value type 2:18 in /Library/WebServer/Documents/sdl-srch-bar/.yarnrc
-      at Parser.unexpected (/usr/local/lib/node_modules/yarn/lib/cli.js:62817:11)
-      at Parser.parse (/usr/local/lib/node_modules/yarn/lib/cli.js:62945:16)
-      at parse (/usr/local/lib/node_modules/yarn/lib/cli.js:63019:17)
-      at module.exports.exports.default (/usr/local/lib/node_modules/yarn/lib/cli.js:62583:96)
-      at YarnRegistry.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:93800:64)
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:109:13
-      at <anonymous>
+  Error: Hostname/IP doesn't match certificate's altnames: "Host: registry.yarnpkg.com. is not in the cert's altnames: DNS:new-pomoxis.usu.edu, DNS:captive.ipam.usu.edu, DNS:captive.usu.edu, DNS:guest.usu.edu, DNS:guesttest.usu.edu"
+      at Object.checkServerIdentity (tls.js:223:17)
+      at TLSSocket.<anonymous> (_tls_wrap.js:1111:29)
+      at emitNone (events.js:106:13)
+      at TLSSocket.emit (events.js:208:7)
+      at TLSSocket._finishInit (_tls_wrap.js:639:8)
+      at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:469:38)
 
 npm manifest: 
   {
     "name": "@sdl-web/sdl-srch-bar",
-    "version": "1.0.3",
-    "description": "Basic Search Bar Element",
+    "version": "1.0.21",
+    "description": "Advanced Search Bar Element",
     "main": "index.js",
     "repository": "git+https://github.com/generic-web-components/sdl-srch-bar.git",
     "author": "Marty Israelsen",
@@ -37,8 +34,9 @@ npm manifest:
     "dependencies": {
       "@polymer/iron-ajax": "^3.0.0-pre.21",
       "@polymer/iron-form": "^3.0.0-pre.21",
-      "@polymer/lit-element": "^0.5.2",
-      "@polymer/polymer": "^3.0.0-pre.13"
+      "@polymer/lit-element": "0.6.1",
+      "@polymer/polymer": "^3.0.0-pre.13",
+      "jquery": "^3.3.1"
     },
     "resolutions": {
       "@polymer/polymer": "3.0.2"
@@ -178,12 +176,11 @@ Lockfile:
       "@polymer/iron-meta" "^3.0.0-pre.21"
       "@polymer/polymer" "^3.0.0"
   
-  "@polymer/lit-element@^0.5.2":
-    version "0.5.2"
-    resolved "https://registry.yarnpkg.com/@polymer/lit-element/-/lit-element-0.5.2.tgz#8d4e2d1ada27cf0f1a38b7b0eb9fadae92eb63df"
+  "@polymer/lit-element@^0.6.0-dev.6":
+    version "0.6.0-dev.6"
+    resolved "https://registry.yarnpkg.com/@polymer/lit-element/-/lit-element-0.6.0-dev.6.tgz#d60d01061300c8059d9dde3a9c14e03777b6a35d"
     dependencies:
-      "@polymer/polymer" "^3.0.2"
-      lit-html "^0.10.0"
+      lit-html "^0.11.0"
   
   "@polymer/marked-element@^3.0.0-pre.21":
     version "3.0.0-pre.21"
@@ -212,7 +209,7 @@ Lockfile:
       "@polymer/iron-flex-layout" "^3.0.0-pre.21"
       "@polymer/polymer" "^3.0.0"
   
-  "@polymer/polymer@3.0.2", "@polymer/polymer@^3.0.0", "@polymer/polymer@^3.0.0-pre.13", "@polymer/polymer@^3.0.2":
+  "@polymer/polymer@3.0.2", "@polymer/polymer@^3.0.0", "@polymer/polymer@^3.0.0-pre.13":
     version "3.0.2"
     resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.2.tgz#626e6f9fae9716b0962ce0211e21df242153eab2"
     dependencies:
@@ -251,9 +248,13 @@ Lockfile:
     dependencies:
       delegate "^3.1.2"
   
-  lit-html@^0.10.0:
-    version "0.10.2"
-    resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.10.2.tgz#53c846afcf91bb1e6623179ef22e327ab8ac0e0e"
+  jquery@^3.3.1:
+    version "3.3.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  
+  lit-html@^0.11.0:
+    version "0.11.1"
+    resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.11.1.tgz#ad3dcfea1dbaf65fadf335fa1e2bd9ac19255394"
   
   marked@~0.3.9:
     version "0.3.19"

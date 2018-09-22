@@ -9,7 +9,7 @@
   "dependencies": {
     "@polymer/iron-ajax": "^3.0.0-pre.21",
     "@polymer/iron-form": "^3.0.0-pre.21",
-    "@polymer/lit-element": "^0.6.0-dev.6",
+    "@polymer/lit-element": "0.6.1",
     "@polymer/polymer": "^3.0.0-pre.13",
     "jquery": "^3.3.1"
   },
