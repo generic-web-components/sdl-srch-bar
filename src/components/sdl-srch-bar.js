@@ -58,7 +58,7 @@ class SdlSrchBar extends LitElement {
               console.log("ERROR:  parsing initform JSON string! ",me.initform,e);
             }
 
-          }, 1000);
+          }, 100);
 
 
         } else {
