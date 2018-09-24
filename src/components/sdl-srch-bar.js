@@ -27,18 +27,35 @@ class SdlSrchBar extends LitElement {
 
       if ( typeof this.autoload != 'undefined' && this.autoload.match(/^t/i) ) {
         if (typeof this.initform != 'undefined') {
+
           setTimeout(function(){ 
             try {
+              var formData = {};
+              var formDataLkup = {};
+              formData.xaction = "read";
+
+              if (typeof me.ajaxobjname !== 'undefined' && me.ajaxobjname !== null && me.ajaxobjname !== "") {
+                var formArray = [];   
+                var formDataLkup = JSON.parse(me.initform);   
+                formArray.push(formDataLkup);
+                formData[me.ajaxobjname] = JSON.stringify(formArray);
+              } else {
                 var formData = JSON.parse(me.initform);
-                var form = me.shadowRoot.querySelector('#main-form');
-                Object.keys(formData).forEach(function(key) {
-                  var selector = "[name='"+key+"']";
-                  var element = document.querySelector(selector);
-                  element.value = formData[key];
+                var formDataLkup = JSON.parse(me.initform);
+              }
+
+              var form = me.shadowRoot.querySelector('#main-form');
+              Object.keys(formDataLkup).forEach(function(key) {
+                var selector = "[name='"+key+"']";
+                var element = document.querySelector(selector);
+                if (typeof element != 'undefined' && element != null) {
+                  element.value = formDataLkup[key];
+                }
               });
+
               me.sendAjax(formData);
             } catch(e) {
-              console.log("ERROR:  parsing initform JSON string! ",this.initform,e);
+              console.log("ERROR:  parsing initform JSON string! ",me.initform,e);
             }
 
           }, 1000);
