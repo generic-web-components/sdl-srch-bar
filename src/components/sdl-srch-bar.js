@@ -17,14 +17,14 @@ class SdlSrchBar extends LitElement {
 
     this.addEventListener('rendered', async (e) => {
 
-      if ( typeof this.onChangeOnly != 'undefined' && this.onChangeOnly.match(/^t/i) ) {
+      if ( typeof this.onchangeonly != 'undefined' && this.onchangeonly.match(/^t/i) ) {
         this.addEventListener("change", this.sendEventOrAjax, false);
       } else {
         this.addEventListener("change", this.sendEventOrAjax, false);
         this.addEventListener("keyup", this.sendEventOrAjax, false);
       }
 
-      if ( typeof this.autoLoad != 'undefined' && this.autoLoad.match(/^t/i) ) {
+      if ( typeof this.autoload != 'undefined' && this.autoload.match(/^t/i) ) {
         this.sendAjax("");
       }
 
@@ -57,16 +57,16 @@ class SdlSrchBar extends LitElement {
     var formData = {};
     formData.xaction = "read";
 
-    if (typeof this.ajaxObjName !== 'undefined' && this.ajaxObjName !== null && this.ajaxObjName !== "") {
+    if (typeof this.ajaxobjname !== 'undefined' && this.ajaxobjname !== null && this.ajaxobjname !== "") {
       var formArray = [];      
       var formObj = form.serializeForm();
       formArray.push(formObj);
-      formData[this.ajaxObjName] = JSON.stringify(formArray);
+      formData[this.ajaxobjname] = JSON.stringify(formArray);
     } else {
       var formData = form.serializeForm();
     }
   
-    if (typeof this.ajaxUrl === 'undefined') {
+    if (typeof this.ajaxurl === 'undefined') {
       // Create a new event that has the formData in it.
       me.dispatchEvent(new CustomEvent('changed', {
         bubbles: true,
@@ -90,7 +90,7 @@ class SdlSrchBar extends LitElement {
     me.lastXHR && me.lastXHR.abort && me.lastXHR.abort();
     me.lastXHR = $.ajax({
        type: "GET",
-       url: me.ajaxUrl,
+       url: me.ajaxurl,
        data: $.param(formData),
        success: function(response){
  
@@ -115,16 +115,16 @@ class SdlSrchBar extends LitElement {
 
   static get properties() { 
     return { 
-      ajaxUrl: {
+      ajaxurl: {
         type: String
       },
-      ajaxObjName: {
+      ajaxobjname: {
         type: String
       }, 
-      autoLoad: {
+      autoload: {
         type: String
       },
-      onChangeOnly: {
+      onchangeonly: {
         type: String
       }
     }
