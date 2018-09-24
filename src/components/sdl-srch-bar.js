@@ -16,6 +16,7 @@ class SdlSrchBar extends LitElement {
     super();
 
     this.addEventListener('rendered', async (e) => {
+      var me = this;
 
       if ( typeof this.onchangeonly != 'undefined' && this.onchangeonly.match(/^t/i) ) {
         this.addEventListener("change", this.sendEventOrAjax, false);
@@ -25,7 +26,27 @@ class SdlSrchBar extends LitElement {
       }
 
       if ( typeof this.autoload != 'undefined' && this.autoload.match(/^t/i) ) {
-        this.sendAjax("");
+        if (typeof this.initform != 'undefined') {
+          setTimeout(function(){ 
+            try {
+                var formData = JSON.parse(me.initform);
+                var form = me.shadowRoot.querySelector('#main-form');
+                Object.keys(formData).forEach(function(key) {
+                  var selector = "[name='"+key+"']";
+                  var element = document.querySelector(selector);
+                  element.value = formData[key];
+              });
+              me.sendAjax(formData);
+            } catch(e) {
+              console.log("ERROR:  parsing initform JSON string! ",this.initform,e);
+            }
+
+          }, 1000);
+
+
+        } else {
+          this.sendAjax("");
+        }
       }
 
     });
@@ -125,6 +146,9 @@ class SdlSrchBar extends LitElement {
         type: String
       },
       onchangeonly: {
+        type: String
+      },
+      initform: {
         type: String
       }
     }
