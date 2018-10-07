@@ -86,10 +86,11 @@ class SdlSrchBar extends LitElement {
   sendEventOrAjax(event) {
     var me = this;
 
-    if (typeof event != 'undefined') {
-      event.cancelBubble = true;
-      if( event.stopPropagation ) event.stopPropagation();
-    }
+    // Allow event to bubble up so that vaadin components work well with vue.js etc.
+    // if (typeof event != 'undefined') {
+    //   event.cancelBubble = true;
+    //   if( event.stopPropagation ) event.stopPropagation();
+    // }
   
     var form = this.shadowRoot.querySelector('#main-form');
     var formData = {};
